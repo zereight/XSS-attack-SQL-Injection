@@ -1,0 +1,22 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	if( session.getAttribute("userId") == null){
+		PrintWriter s = response.getWriter();
+		s.println("<script>");
+		s.println("alert('로그인 후 등록이 가능합니다.');");
+		s.println("location.href='./login.jsp';");
+		s.println("</script>");
+		s.close();
+		return;
+	}
+	
+	String postsTitle = null;
+	String postsContent = null;
+	
+
+%>

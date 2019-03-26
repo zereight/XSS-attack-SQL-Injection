@@ -1,0 +1,45 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	request.setCharacterEncoding("UTF-8");
+
+	if( session.getAttribute("userId") == null){
+		PrintWriter s = response.getWriter();
+		s.println("<script>");
+		s.println("alert('로그인 후 등록이 가능합니다.');");
+		s.println("location.href='./userLogin.jsp';");
+		s.println("</script>");
+		s.close();
+		return;
+	}
+	
+	String postsTitle = null;
+	String postsContent = null;
+	
+	if(request.getParameter("postsTitle") != null){
+		postsTitle = request.getParameter("postsTitle");
+	}
+	if(request.getParameter("postsContent") != null){
+		postsContent = request.getParameter("postsContent");
+	}
+	
+	if( postsTitle==null || postsContent==null ){
+		PrintWriter s = response.getWriter();
+		s.println("<script>");
+		s.println("alert('입력되지 않은 항목이 있습니다.');");
+		s.println("location.href='./index.jsp';");
+		s.println("</script>");
+		s.close();
+		return;
+	} else{
+		
+		int result = 
+		
+	}
+	
+	
+	
+
+%>

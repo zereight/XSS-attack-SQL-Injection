@@ -1,0 +1,15 @@
+package posts;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import user.UserDTO;
+
+public class PostsDAO {
+	
+	public int registPosts(UserDTO dto) {
+		Connection conn = null;
+		Statement stmt = null;
+	}
+	
+}

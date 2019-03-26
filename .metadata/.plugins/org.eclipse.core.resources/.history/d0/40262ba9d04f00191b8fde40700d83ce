@@ -1,0 +1,7 @@
+create database securityTest;
+mysql> create table user(
+    -> userId varchar(20),
+    -> userPassword varchar(20)
+    -> );
+mysql> alter table user modify userId varchar(20) primary key;
+

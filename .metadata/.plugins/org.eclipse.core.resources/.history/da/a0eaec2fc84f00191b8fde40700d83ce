@@ -1,0 +1,35 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import util.DatabaseUtil;
+
+public class UserDAO {
+
+	public int join(UserDTO dto) {
+		//DB에 회원을 추가하는 함수
+		
+		Connection conn = null;
+		//SQL injection을 위해 PreparedStatement 사용안하고 할것임.
+		Statement stmt = null;
+		
+		try {
+			
+			conn = DatabaseUtil.getConnection();
+			stmt = conn.createStatement();
+			
+			
+			
+			return stmt.executeUpdate("INSERT INTO VALUES(" +
+			dto.getUserId() + ","+ dto.getUserPassword()+ "")");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+}

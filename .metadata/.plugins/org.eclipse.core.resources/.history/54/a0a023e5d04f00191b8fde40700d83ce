@@ -1,0 +1,12 @@
+package posts;
+
+public class PostsDTO {
+	int postsId;
+	String postsTitle;
+	String postsContent;
+	String userId;
+	
+	
+	
+	
+}

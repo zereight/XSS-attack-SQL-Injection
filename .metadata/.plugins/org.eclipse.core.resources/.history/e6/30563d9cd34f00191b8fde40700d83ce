@@ -1,0 +1,29 @@
+package posts;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import util.DatabaseUtil;
+
+
+public class PostsDAO {
+	
+	public int registPosts(PostsDTO dto) {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			
+			conn = DatabaseUtil.getConnection();
+			stmt = conn.createStatement();
+			return stmt.executeUpdate("INSERT INTO POSTS VALUES (0" +"'"+dto.getPostsTitle()+"'"+
+					"'"+dto.getPostsContent()+"'"+"'"+dto.getUserId()+"')" );
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return -1;
+	}
+	
+}

@@ -1,0 +1,25 @@
+create database securityTest;
+mysql> create table user(
+    -> userId varchar(20),
+    -> userPassword varchar(20)
+    -> );
+mysql> alter table user modify userId varchar(20) primary key;
+
+mysql> create table posts (
+    -> postsId int primary key auto_increment,
+    -> postsTitle varchar(20),
+    -> postsContent varchar(1024),
+    -> userId varchar(20)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc posts;
++--------------+---------------+------+-----+---------+----------------+
+| Field        | Type          | Null | Key | Default | Extra          |
++--------------+---------------+------+-----+---------+----------------+
+| postsId      | int(11)       | NO   | PRI | NULL    | auto_increment |
+| postsTitle   | varchar(20)   | YES  |     | NULL    |                |
+| postsContent | varchar(1024) | YES  |     | NULL    |                |
+| userId       | varchar(20)   | YES  |     | NULL    |                |
++--------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)

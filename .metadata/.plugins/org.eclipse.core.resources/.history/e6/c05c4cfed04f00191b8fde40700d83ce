@@ -1,0 +1,11 @@
+package posts;
+
+import user.UserDTO;
+
+public class PostsDAO {
+	
+	public int registPosts(UserDTO) {
+		
+	}
+	
+}

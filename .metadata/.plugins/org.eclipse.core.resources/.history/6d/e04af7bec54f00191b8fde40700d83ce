@@ -1,0 +1,10 @@
+package user;
+
+public class UserDTO {
+	
+	String userId;
+	String userPassword;
+	
+	
+	
+}

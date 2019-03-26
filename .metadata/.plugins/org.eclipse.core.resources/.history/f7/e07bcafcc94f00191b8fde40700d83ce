@@ -1,0 +1,20 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    
+<%
+
+	request.setCharacterEncoding("UTF-8");
+
+	String userId = null;
+	
+	if( session.getAttribute("userId") != null ){
+		PrintWriter p = response.getWriter();
+		p.println("<script>");
+		p.println("<script>");
+		p.println("<script>");
+		p.close();
+	}
+
+%>

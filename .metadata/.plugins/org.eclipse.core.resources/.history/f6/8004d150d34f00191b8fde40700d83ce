@@ -1,0 +1,24 @@
+package posts;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+
+public class PostsDAO {
+	
+	public int registPosts(PostsDTO dto) {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return -1;
+	}
+	
+}
