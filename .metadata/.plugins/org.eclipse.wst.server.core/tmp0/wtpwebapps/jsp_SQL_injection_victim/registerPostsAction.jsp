@@ -28,7 +28,7 @@
 		postsContent = request.getParameter("postsContent");
 	}
 	
-	if( postsTitle==null || postsContent==null ){
+	if( postsTitle==null || postsContent==null ||postsTitle=="" || postsContent==""){
 		PrintWriter s = response.getWriter();
 		s.println("<script>");
 		s.println("alert('입력되지 않은 항목이 있습니다.');");

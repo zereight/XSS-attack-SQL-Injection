@@ -42,14 +42,16 @@ public class UserDAO {
 		//SQL injection을 위해 PreparedStatement 사용안하고 할것임.
 		Statement stmt = null;
 		ResultSet res = null;
-		
+	
 		try {
 			
 			conn = DatabaseUtil.getConnection();
 			stmt = conn.createStatement();
 			
-			res=  stmt.executeQuery("SELECT userPassword FROM USER WHERE userId= " + "'"+dto.getUserId()+"'"
-			+ "and '" + dto.getUserPassword() + "'");
+			//res=  stmt.executeQuery("SELECT * FROM USER WHERE userId="+ "'"+dto.getUserId()+"'"+" and userPassword="+"'"
+			//		+ dto.getUserPassword() + "'");
+			res=  stmt.executeQuery("SELECT * FROM USER WHERE userId="+ "'"+dto.getUserId()+"'"+" and userPassword="+"'"
+							+ dto.getUserPassword() + "'");
 			
 			if(res.next()) {
 				return 1;

@@ -38,6 +38,7 @@
                 <a class="dropdown-item" href="./logout.jsp">Logout</a>
               </div>
             </li>
+           
           </ul>
 
         </div>
@@ -82,8 +83,12 @@
       </div>
 	
     <div class="container my-3" style="height:100%;">
+    <%if( session.getAttribute("userId") != null ){ %>
+		<h3 class="text-center"> <%= session.getAttribute("userId") %> 님이 로그인 중입니다.</h3>
+	<% }%>
+    	
         <h1 class="text-center">XSS와 SQL injection Test 페이지 입니다.</h1>
-
+		
 
 <% 
 	ArrayList<PostsDTO> postsList = new PostsDAO().getList();
@@ -101,7 +106,7 @@
             	
                 <h5 class="card-title"><%= postsList.get(i).getPostsTitle() %></h5>
                 <p class="card-text"><%= postsList.get(i).getPostsContent() %></p>
-             	<button class="btn btn-info" onclick="return confirm( <%= postsList.get(i).getPostsContent() %> )">자세히 보기</button>
+             	<button class="btn btn-info" onclick="return confirm( '<%= postsList.get(i).getPostsContent() %>' )">자세히 보기</button>
             </div>
             <div class="card-footer">
                 <small>Author: </small><%= postsList.get(i).getUserId() %>
